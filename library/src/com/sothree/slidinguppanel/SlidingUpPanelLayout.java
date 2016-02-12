@@ -967,7 +967,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
                         && mSlideOffset >=0 && !isViewUnder(mSlideableView, (int) mInitialMotionX, (int) mInitialMotionY) && mFadeOnClickListener != null) {
                     playSoundEffect(android.view.SoundEffectConstants.CLICK);
                     mFadeOnClickListener.onClick(this);
-                    return true;
+                    return mSlideState == PanelState.ANCHORED || mSlideState == PanelState.EXPANDED;
                 }
                 break;
         }
